@@ -27,14 +27,16 @@ function displayHistory() {
 
   previousTests.forEach((test) => {
     const newRow = document.createElement("div");
-    newRow.classList.add("card");
+    newRow.classList.add("col-lg-4")
     console.log(test);
 
     newRow.innerHTML = `
-  <h3 class="text-dark">${test.questionText}</h3>
-  <p class="text-dark">You took: <span class="bold">${test.timeTaken}</span> seconds</p>
-    <p class="text-dark">You made <span class="bold red">${test.errorCount}</span> mistakes</p>
-  `;
+    <div class="card-body bg-light p-3 rounded mt-2">
+    <h3 class="card-title">${test.questionText}</h5>
+    <p class="card-text mt-2">You took: <span class="bold">${test.timeTaken}</span> seconds</p>
+    <p class="card-text">You made <span class="bold red">${test.errorCount}</span> mistakes</p>
+    </div>
+   `;
 
     histories.appendChild(newRow);
   });
